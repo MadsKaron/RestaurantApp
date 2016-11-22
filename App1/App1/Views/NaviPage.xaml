@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App1.NaviPage">
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
+  </ContentPage.Padding>
+  <ContentPage.Content>
+    <StackLayout BackgroundColor="White">
+      <Button Text="Home" TextColor="White" BackgroundColor="Navy" Command="{Binding GoHomeCommand}" />
+      <Button Text="Menu" TextColor="White" BackgroundColor="Navy" Command="{Binding GoMenuCommand}" />
+      <Button Text="To Cafe" TextColor="White" BackgroundColor="Navy" Command="{Binding GoToThereCommand}" />
+      <Button Text="Member" TextColor="White" BackgroundColor="Navy" Command="{Binding GoMemberCommand}" />
+    </StackLayout>
+  </ContentPage.Content> 
+</ContentPage>
