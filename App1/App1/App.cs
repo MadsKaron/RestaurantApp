@@ -5,13 +5,27 @@ using System.Reflection.Emit;
 using System.Text;
 
 using Xamarin.Forms;
+using System.Threading.Tasks; 
 
 namespace App1
 {
+    public interface IAuthenticate
+    {
+        Task<bool> Authenticate(); 
+    }
+
+
+
     public class App : Application
     {
         public static NavigationPage NavigationPage { get; private set;}
         public static RootPage RootPage; 
+        public static IAuthenticate Authenticator { get; private set; }
+
+        public static void Init(IAuthenticate authenticator)
+        {
+            Authenticator = authenticator; 
+        }
 
         public static bool MenuIsPresented
         {
@@ -49,5 +63,8 @@ namespace App1
         {
             // Handle when your app resumes
         }
+
+
+
     }
 }
