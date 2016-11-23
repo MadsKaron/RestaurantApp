@@ -34,11 +34,12 @@ namespace App1.Droid
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
+        }
 
-
-
-
-
+        public override void OnBackPressed()
+        {
+            if (App.RootPage.DoBack) { base.OnBackPressed(); }
+            
         }
     }
 }

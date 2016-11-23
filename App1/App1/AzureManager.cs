@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using System.Text;
-
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace App1
@@ -13,10 +13,12 @@ namespace App1
     {
         private static AzureManager instance;
         private MobileServiceClient client;
+        private IMobileServiceTable<Menu> menuTable; 
 
         private AzureManager()
         {
             this.client = new MobileServiceClient("http://thisishailiey.azurewebsites.net/");
+            this.menuTable = this.client.GetTable<Menu>(); 
         }
 
         public MobileServiceClient AzureClient
@@ -35,6 +37,11 @@ namespace App1
 
                 return instance;
             }
+        }
+
+        public async Task<List<Menu>> GetMenu()
+        {
+            return await this.menuTable.ToListAsync(); 
         }
     }
 }

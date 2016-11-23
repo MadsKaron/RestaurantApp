@@ -18,5 +18,6 @@ namespace App1
             Icon = Device.OS == TargetPlatform.iOS ? "menu.png" : null;
             
         }
+        
     }
 }

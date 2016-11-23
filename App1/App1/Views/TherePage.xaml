@@ -7,7 +7,7 @@
   <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" /> 
   <StackLayout BackgroundColor="White" VerticalOptions="StartAndExpand" Padding ="0" >
     <Label x:Name="locationLabel"/>
-    <maps:Map WidthRequest="320" HeightRequest="100"
+    <maps:Map WidthRequest="320" HeightRequest="200"
               x:Name="MyMap"
               IsShowingUser="true"
      />         

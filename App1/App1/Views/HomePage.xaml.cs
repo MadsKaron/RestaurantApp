@@ -15,18 +15,6 @@ namespace App1
             InitializeComponent();
             BindingContext = new MenuPageViewModel();
         }
-        /*
-        async void GoThereButtonClicked(object sender, EventArgs args)
-        {
-
-        }
-        async void MenuButtonClicked(object sender, EventArgs args)
-        {
-
-        }
-        async void MemberButtonClicked(object sender, EventArgs args)
-        {
-
-        }*/
+        
     }
 }

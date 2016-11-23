@@ -13,6 +13,12 @@ namespace App1
         public MenuPage()
         {
             InitializeComponent();
+            
+        }
+        public async void ShowMenuList_Clicked(object sender, EventArgs e)
+        {
+            List<Menu> menus = await AzureManager.AzureManagerInstance.GetMenu();
+            MenuList.ItemsSource = menus; 
         }
     }
 }
