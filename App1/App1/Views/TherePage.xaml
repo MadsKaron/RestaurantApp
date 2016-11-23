@@ -1,10 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App1.TherePage">
-  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" />
-  <!--
-  <StackLayout VerticalOptions="StartAndExpand"
-               
-               </StackLayout>-->
+             xmlns:maps="clr-namespace:Xamarin.Forms.Maps;assembly=Xamarin.Forms.Maps"
+             x:Class="App1.TherePage"
+             Title="Go to De Caffe">
+  <Label Text="{Binding MainText}" VerticalOptions="Center" HorizontalOptions="Center" /> 
+  <StackLayout BackgroundColor="White" VerticalOptions="StartAndExpand" Padding ="0" >
+    <Label x:Name="locationLabel"/>
+    <maps:Map WidthRequest="320" HeightRequest="100"
+              x:Name="MyMap"
+              IsShowingUser="true"
+     />         
+     <Button Text="Estimation with Uber" 
+             VerticalOptions="Start" HorizontalOptions="FillAndExpand" Clicked="getUserLocation"/>
+      <Label x:Name="estimate_distance" HorizontalOptions="Center" VerticalOptions="CenterAndExpand"/>        
+  <ListView x:Name="UberList" HasUnevenRows="True">
+    <ListView.ItemTemplate>
+      <DataTemplate>
+        <ViewCell>
+          <ViewCell.View>
+          <Grid>
+            <Grid.RowDefinitions>
+              <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="3*"/>
+              <ColumnDefinition Width="3*"/>
+              <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+          
+        <Label Grid.Column="0" Text="{Binding localized_display_name}"/>
+        <Label Grid.Column="1" Text="{Binding estimate}"/>
+        <Label Grid.Column="2" Text="{Binding currency_code}"/>
+            </Grid>
+            </ViewCell.View>
+        </ViewCell>
+      </DataTemplate>  
+    
+    </ListView.ItemTemplate>
+  </ListView>
+  </StackLayout>
 </ContentPage>

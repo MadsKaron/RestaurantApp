@@ -12,14 +12,13 @@ namespace App1
         public double distance { get; set; }
         public string display_name { get; set; }
         public string product_id { get; set; }
-        public int high_estimate { get; set; }
-        public int surge_multiplier { get; set; }
-        public int minimum { get; set; }
-        public int low_estimate { get; set; }
-        public int duration { get; set; }
+        public string high_estimate { get; set; }
+        public string surge_multiplier { get; set; }
+        public string minimum { get; set; }
+        public string low_estimate { get; set; }
+        public string duration { get; set; }
         public string estimate { get; set; }
         public string currency_code { get; set; }
-
 
     }
     public class RootObject
