@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace App1
 {
-    public class Member
+    public class Members
     {
         public string id { get; set; }
         public string createdAt { get; set; }

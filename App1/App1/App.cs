@@ -11,7 +11,8 @@ namespace App1
 {
     public interface IAuthenticate
     {
-        Task<bool> Authenticate(); 
+        Task<bool> Authenticate();
+        Task<bool> LogoutAsync();
     }
 
 

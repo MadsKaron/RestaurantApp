@@ -13,12 +13,14 @@ namespace App1
     {
         private static AzureManager instance;
         private MobileServiceClient client;
-        private IMobileServiceTable<Menu> menuTable; 
+        private IMobileServiceTable<Menu> menuTable;
+        private IMobileServiceTable<Members> memberTable;
 
         private AzureManager()
         {
             this.client = new MobileServiceClient("http://thisishailiey.azurewebsites.net/");
-            this.menuTable = this.client.GetTable<Menu>(); 
+            this.menuTable = this.client.GetTable<Menu>();
+            this.memberTable = this.client.GetTable<Members>(); 
         }
 
         public MobileServiceClient AzureClient
@@ -43,5 +45,21 @@ namespace App1
         {
             return await this.menuTable.ToListAsync(); 
         }
+
+        public async Task<List<Members>> GetMember()
+        {
+            return await this.memberTable.ToListAsync(); 
+        }
+
+        public async Task<List<Members>> GetAndCheckUser(string email)
+        {
+            return await memberTable.Where(memberTable => memberTable.email_address.Equals(email)).ToListAsync();
+        }
+
+        public async Task AddMember(Members member)
+        {
+            await this.memberTable.InsertAsync(member); 
+        }
+
     }
 }

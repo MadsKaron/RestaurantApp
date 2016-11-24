@@ -9,8 +9,8 @@ using Android.OS;
 using Plugin.Permissions;
 using Microsoft.WindowsAzure.MobileServices;
 using System.Threading.Tasks;
-using static App1.App; 
-
+using static App1.App;
+using Android.Webkit;
 
 namespace App1.Droid
 {
@@ -63,8 +63,28 @@ namespace App1.Droid
             return success; 
 
         }
+        public async Task<bool> LogoutAsync()
+        {
+            var message = string.Empty;
+            var success = false;
+            try
+            {
+                CookieManager.Instance.RemoveAllCookie();
+                await AzureManager.AzureManagerInstance.AzureClient.LogoutAsync();
+                success = true;
+            }
+            catch (Exception ex)
+            {
+                message = ex.Message;
+            }
 
+            AlertDialog.Builder builder = new AlertDialog.Builder(this);
+            builder.SetMessage(message);
+            builder.SetTitle("Sign-out result");
+            builder.Create().Show();
 
+            return success;
+        }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Android.Content.PM.Permission[] grantResults)
         {
             PermissionsImplementation.Current.OnRequestPermissionsResult(requestCode, permissions, grantResults);
