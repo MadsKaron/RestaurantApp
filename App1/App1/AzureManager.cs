@@ -53,12 +53,18 @@ namespace App1
 
         public async Task<List<Members>> GetAndCheckUser(string email)
         {
-            return await memberTable.Where(memberTable => memberTable.email_address.Equals(email)).ToListAsync();
+            return await memberTable.Where(memberTable => memberTable.email_address==email).ToListAsync();
+            //return await memberTable.Select<Members.>.ToListAsync(); 
         }
 
         public async Task AddMember(Members member)
         {
             await this.memberTable.InsertAsync(member); 
+        }
+
+        public async Task UpdateMemberLastVisit(Members member)
+        {
+            await this.memberTable.UpdateAsync(member);
         }
 
     }

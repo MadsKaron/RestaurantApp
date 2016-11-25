@@ -6,11 +6,13 @@
     <OnPlatform x:TypeArguments="Thickness" iOS="0, 20, 0, 0" />
   </ContentPage.Padding>
   <ContentPage.Content>
-    <StackLayout BackgroundColor="White">
-      <Button Text="Home" TextColor="White" BackgroundColor="Navy" Command="{Binding GoHomeCommand}" />
-      <Button Text="Menu" TextColor="White" BackgroundColor="Navy" Command="{Binding GoMenuCommand}" />
-      <Button Text="To Cafe" TextColor="White" BackgroundColor="Navy" Command="{Binding GoToThereCommand}" />
-      <Button Text="Member" TextColor="White" BackgroundColor="Navy" Command="{Binding GoMemberCommand}" />
+    <StackLayout BackgroundColor="#bcc2c8">
+      <Image VerticalOptions="Start" Source="header.png"/>
+      
+      <Button Text="Main" TextColor="White" BackgroundColor="#bcc2c8" Command="{Binding GoHomeCommand}" BorderColor="Transparent"/>
+      <Button Text="Menu" TextColor="White" BackgroundColor="#bcc2c8" Command="{Binding GoMenuCommand}" BorderColor="Transparent" />
+      <Button Text="To Cafe" TextColor="White" BackgroundColor="#bcc2c8" Command="{Binding GoToThereCommand}" BorderColor="Transparent"/>
+      <Button Text="Account" TextColor="White" BackgroundColor="#bcc2c8" Command="{Binding GoMemberCommand}" BorderColor="Transparent"/>
     </StackLayout>
   </ContentPage.Content> 
 </ContentPage>

@@ -24,7 +24,7 @@
                 
                 <Label Grid.Column="0" Text="{Binding item_name}"/>
                 <Label Grid.Column="1" Text="{Binding ingredients}"/>
-                <Label Grid.Column="2" Text="{Binding item_price}"/>
+                <Label Grid.Column="2" Text="{Binding item_price, StringFormat='${0}'}"/> 
               </Grid>
              </ViewCell.View>
           </ViewCell>

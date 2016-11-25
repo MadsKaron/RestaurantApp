@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App1.HomePage">
   <StackLayout BackgroundColor ="White">
-    <Image x:Name="welcomeImage" VerticalOptions="Start"/>
+    <Image x:Name="welcomeImage" VerticalOptions="Start" Source="de_cafe.png"/>
+    
     <Label x:Name="welcomeLabel"
            Text="Welcome"
            Font="Large"
